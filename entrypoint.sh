@@ -33,6 +33,10 @@ if [ -n "$INPUT_LIGO_LIBRARIES" ]; then
     # for each ligo lib in the comma separated INPUT_LIGO_LIBRARIES install the library
     for ligo_lib in $(echo $INPUT_LIGO_LIBRARIES | tr "," "\n"); do
         echo "Installing ligo lib $ligo_lib"
+        pwd
+        ls
+        cat package.json
+        cat esy.json
         docker run --rm -v "$PWD":"$PWD" -w "$PWD" $TAQ_LIGO_IMAGE install ${ligo_lib}
     done
 fi
