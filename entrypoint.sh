@@ -37,7 +37,7 @@ if [ -n "$INPUT_LIGO_LIBRARIES" ]; then
         ls
         cat package.json
         cat esy.json
-        docker run --rm -v "$PWD":"$PWD" -w "$PWD" $TAQ_LIGO_IMAGE install ${ligo_lib}
+        taq ligo --command "install @ligo/fa"
     done
 fi
 
